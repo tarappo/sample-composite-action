@@ -23,6 +23,7 @@ runs:
       shell: bash
       id: sample
       run: |
+        echo "START"
         export SAMPLE_TOKEN=${{ inputs.who-to-greet }}
         echo $SAMPLE_TOKEN
         exec ./sample.sh
