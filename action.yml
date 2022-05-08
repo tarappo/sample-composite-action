@@ -24,6 +24,7 @@ runs:
       id: sample
       run: |
         echo "START"
+        ls -l
         export SAMPLE_TOKEN=${{ inputs.who-to-greet }}
         echo $SAMPLE_TOKEN
-        exec ./sample.sh
+        sample.sh
