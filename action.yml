@@ -30,5 +30,11 @@ runs:
         ls -l
         export SAMPLE_TOKEN=${{ inputs.who-to-greet }}
         echo $SAMPLE_TOKEN
-        sample.sh >> $GITHUB_ENV
+        sample.sh
         echo "::set-output name=sample-output:$(echo $NEW_ENV)"
+    - name: env test
+    - run: |
+        echo $NEW_ENV
+        echo ${{ env.NEW_ENV }}
+        echo $NEW_ENV2
+        echo ${{ env.NEW_ENV2 }}
