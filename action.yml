@@ -27,4 +27,4 @@ runs:
         ls -l
         export SAMPLE_TOKEN=${{ inputs.who-to-greet }}
         echo $SAMPLE_TOKEN
-        sample.sh
+        sample.sh >> $GITHUB_ENV
