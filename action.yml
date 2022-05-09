@@ -32,7 +32,7 @@ runs:
         echo $SAMPLE_TOKEN
         sample.sh
         echo "::set-output name=sample-output:$(echo $NEW_ENV)"
-    - name: env test
+    - name: "env test"
     - run: |
         echo $NEW_ENV
         echo ${{ env.NEW_ENV }}
