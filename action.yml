@@ -33,7 +33,9 @@ runs:
         sample.sh
         echo "::set-output name=sample-output:$(echo $NEW_ENV)"
     - name: "env test"
-    - run: |
+      shell: bash
+      id: env_sample
+      run: |
         echo $NEW_ENV
         echo ${{ env.NEW_ENV }}
         echo $NEW_ENV2
