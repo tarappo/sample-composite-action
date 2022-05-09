@@ -9,6 +9,9 @@ outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-id }}
+  sample-output:
+    description: "Sample Output"
+    value: ${{ steps.sample.outputs.sample-output }}
 runs:
   using: "composite"
   steps:
@@ -28,3 +31,4 @@ runs:
         export SAMPLE_TOKEN=${{ inputs.who-to-greet }}
         echo $SAMPLE_TOKEN
         sample.sh >> $GITHUB_ENV
+        echo "::set-output name=sample-output:$(echo $NEW_ENV)"
